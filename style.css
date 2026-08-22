@@ -1,0 +1,23 @@
+/* Reset margins and set up full-height centering */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+    /* Soft, paper-like background */
+}
+
+/* Styling for the title */
+.title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    /* Fallback serif */
+    font-style: italic;
+    font-weight: 700;
+    font-size: 5rem;
+    /* Large text */
+    color: #222222;
+    letter-spacing: 2px;
+    text-align: center;
+}
