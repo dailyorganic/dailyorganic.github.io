@@ -15,6 +15,10 @@ body {
     align-items: center;
 
     background-color: #ffffff;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='%23dbe1d5' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(70,70)'><polygon points='-12,-20.78 12,-20.78 24,0 12,20.78 -12,20.78 -24,0'/><circle cx='0' cy='0' r='13'/></g><polyline points='210,90 230,70 250,90 270,70 290,90 310,70 330,90'/><g transform='translate(340,210)'><polygon points='-12,-20.78 12,-20.78 24,0 12,20.78 -12,20.78 -24,0'/></g><g transform='translate(110,300)'><polygon points='-12,-20.78 12,-20.78 24,0 12,20.78 -12,20.78 -24,0'/><circle cx='0' cy='0' r='13'/></g><polyline points='230,340 250,320 270,340 290,320 310,340'/><g transform='translate(220,200)'><polygon points='-10,-17.32 10,-17.32 20,0 10,17.32 -10,17.32 -20,0'/></g></g></svg>");
+    background-repeat: repeat;
+    background-size: 400px 400px;
+
     color: #202722;
 
     font-family: 'DM Sans', Arial, sans-serif;
