@@ -1,23 +1,37 @@
-/* Reset margins and set up full-height centering */
+/* chem */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500;600&display=swap');
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fcfcfc;
-    /* Soft, paper-like background */
+
+    background-color: #e8eee7;
+    color: #202722;
 }
 
-/* Styling for the title */
 .title {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    /* Fallback serif */
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: -2px;
     font-style: italic;
-    font-weight: 700;
-    font-size: 5rem;
-    /* Large text */
-    color: #222222;
-    letter-spacing: 2px;
-    text-align: center;
+    color: #1d2921;
+}
+
+p {
+    margin: 8px 0;
+
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+
+    color: #59655c;
 }
