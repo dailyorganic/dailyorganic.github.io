@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #fafaf7;
+    background-color: #ffffff;
     color: #202722;
 
     font-family: 'DM Sans', Arial, sans-serif;
@@ -90,11 +90,10 @@ body {
 
 .level-card {
     width: 100%;
-    padding: 24px 28px;
+    padding: 22px 32px;
 
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
 
     border-radius: 16px;
     border: 1px solid transparent;
@@ -122,70 +121,53 @@ body {
     transform: translateY(0);
 }
 
-.level-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-}
-
 .level-label {
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: -0.5px;
+
+    color: #1a1a1a;
 }
 
-.level-desc {
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.2px;
-}
-
-/* Stars */
+/* Stars — pushed to the right, but not flush with the edge */
 .stars {
     display: inline-flex;
-    gap: 4px;
-    font-size: 1.15rem;
+    gap: 6px;
+    font-size: 1.35rem;
     line-height: 1;
+
+    margin-left: auto;
+    margin-right: 15%;
+
+    color: #1a1a1a;
 }
 
-.star.filled {
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
-}
-
-.star.empty {
-    color: rgba(255, 255, 255, 0.45);
+.star {
+    display: inline-block;
 }
 
 /* ---------- Color variants ---------- */
 /* Easy — green */
 .level-easy {
-    background-color: #cfe3c9;
-    border-color: #a8c9a0;
-    color: #1f3d1a;
+    background-color: #c8e2bd;
+    border-color: #a8c99b;
 }
-.level-easy .level-desc { color: #3c5837; }
 .level-easy:hover { border-color: #6a9a5f; }
 
 /* Medium — yellow */
 .level-medium {
-    background-color: #f2e4b3;
-    border-color: #d9c583;
-    color: #4a3c0e;
+    background-color: #f3e2a3;
+    border-color: #d9c576;
 }
-.level-medium .level-desc { color: #6a5a1e; }
 .level-medium:hover { border-color: #b8a04d; }
 
 /* Hard — red */
 .level-hard {
-    background-color: #eec6bf;
-    border-color: #dba79c;
-    color: #5a1e14;
+    background-color: #edb8ae;
+    border-color: #d99a8c;
 }
-.level-hard .level-desc { color: #7a3a2e; }
 .level-hard:hover { border-color: #b95c48; }
 
 /* ---------- Footer ---------- */
@@ -228,14 +210,15 @@ body {
     }
 
     .level-card {
-        padding: 20px 22px;
+        padding: 18px 22px;
     }
 
     .level-label {
         font-size: 1.4rem;
     }
 
-    .level-desc {
-        font-size: 0.92rem;
+    .stars {
+        font-size: 1.15rem;
+        margin-right: 4%;
     }
 }
