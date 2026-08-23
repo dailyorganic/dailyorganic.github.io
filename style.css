@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #e8eee7;
+    background-color: #fafaf7;
     color: #202722;
 
     font-family: 'DM Sans', Arial, sans-serif;
@@ -22,17 +22,24 @@ body {
 
 .container {
     width: 100%;
-    max-width: 720px;
+    max-width: 760px;
     padding: 48px 32px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 56px;
+    gap: 32px;
 }
 
-/* ---------- Hero ---------- */
-.hero {
+/* ---------- Hero card ---------- */
+.hero-card {
+    width: 100%;
+    padding: 48px 40px;
+
+    background-color: #dbe6ee;
+    border: 1px solid #b8ccd8;
+    border-radius: 20px;
+
     text-align: center;
 }
 
@@ -45,20 +52,20 @@ body {
     letter-spacing: 3px;
     text-transform: uppercase;
 
-    color: #6b7a6e;
+    color: #4a5a68;
 }
 
 .title {
     margin: 0;
 
     font-family: Georgia, serif;
-    font-size: 5.5rem;
+    font-size: 5rem;
     font-weight: 600;
     letter-spacing: -2px;
     font-style: italic;
     line-height: 1;
 
-    color: #1d2921;
+    color: #1c2a35;
 }
 
 .subtitle {
@@ -69,7 +76,7 @@ body {
     font-weight: 400;
     letter-spacing: 0.3px;
 
-    color: #59655c;
+    color: #4a5a68;
 }
 
 /* ---------- Level buttons ---------- */
@@ -78,38 +85,32 @@ body {
 
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 .level-card {
     width: 100%;
-    padding: 22px 26px;
+    padding: 24px 28px;
 
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
-    background-color: #f4f7f3;
-    border: 1px solid #d4dcd3;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 1px solid transparent;
 
     font-family: 'DM Sans', Arial, sans-serif;
     text-align: left;
-    color: #202722;
     cursor: pointer;
 
     transition: transform 0.18s ease,
-                border-color 0.18s ease,
-                background-color 0.18s ease,
-                box-shadow 0.18s ease;
+                box-shadow 0.18s ease,
+                border-color 0.18s ease;
 }
 
 .level-card:hover {
     transform: translateY(-2px);
-    border-color: #1d2921;
-    background-color: #ffffff;
-    box-shadow: 0 8px 20px -12px rgba(29, 41, 33, 0.35);
+    box-shadow: 0 10px 24px -14px rgba(29, 41, 33, 0.35);
 }
 
 .level-card:focus-visible {
@@ -121,36 +122,71 @@ body {
     transform: translateY(0);
 }
 
+.level-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
 .level-label {
     font-family: Georgia, serif;
     font-style: italic;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: -0.5px;
-
-    color: #1d2921;
-    min-width: 110px;
 }
 
 .level-desc {
-    font-size: 0.98rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.2px;
-
-    color: #59655c;
 }
 
-.level-arrow {
-    font-size: 1.3rem;
-    color: #6b7a6e;
-
-    transition: transform 0.18s ease, color 0.18s ease;
+/* Stars */
+.stars {
+    display: inline-flex;
+    gap: 4px;
+    font-size: 1.15rem;
+    line-height: 1;
 }
 
-.level-card:hover .level-arrow {
-    transform: translateX(4px);
-    color: #1d2921;
+.star.filled {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
+
+.star.empty {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ---------- Color variants ---------- */
+/* Easy — green */
+.level-easy {
+    background-color: #cfe3c9;
+    border-color: #a8c9a0;
+    color: #1f3d1a;
+}
+.level-easy .level-desc { color: #3c5837; }
+.level-easy:hover { border-color: #6a9a5f; }
+
+/* Medium — yellow */
+.level-medium {
+    background-color: #f2e4b3;
+    border-color: #d9c583;
+    color: #4a3c0e;
+}
+.level-medium .level-desc { color: #6a5a1e; }
+.level-medium:hover { border-color: #b8a04d; }
+
+/* Hard — red */
+.level-hard {
+    background-color: #eec6bf;
+    border-color: #dba79c;
+    color: #5a1e14;
+}
+.level-hard .level-desc { color: #7a3a2e; }
+.level-hard:hover { border-color: #b95c48; }
 
 /* ---------- Footer ---------- */
 .footnote p {
@@ -162,46 +198,44 @@ body {
     letter-spacing: 0.5px;
 
     color: #8a978c;
+    text-align: center;
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 600px) {
     .container {
-        padding: 40px 20px;
-        gap: 40px;
+        padding: 32px 18px;
+        gap: 24px;
+    }
+
+    .hero-card {
+        padding: 36px 24px;
+        border-radius: 16px;
     }
 
     .title {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
         letter-spacing: -1px;
     }
 
     .eyebrow {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         letter-spacing: 2px;
     }
 
+    .subtitle {
+        font-size: 1rem;
+    }
+
     .level-card {
-        grid-template-columns: 1fr auto;
-        gap: 6px 16px;
-        padding: 20px;
+        padding: 20px 22px;
     }
 
     .level-label {
-        grid-column: 1;
-        grid-row: 1;
-        min-width: 0;
-    }
-
-    .level-arrow {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        align-self: center;
+        font-size: 1.4rem;
     }
 
     .level-desc {
-        grid-column: 1;
-        grid-row: 2;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
     }
 }
