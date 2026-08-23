@@ -73,11 +73,12 @@ body {
 }
 
 .subtitle {
-    margin: 20px 0 0;
+    margin: 32px 0 0;
 
     font-family: 'DM Sans', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
+    font-style: italic;
     letter-spacing: 0.3px;
 
     color: #4a5a68;
