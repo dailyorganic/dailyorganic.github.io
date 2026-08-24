@@ -1,15 +1,20 @@
-// Wait for the HTML to fully load before running the script
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Find the Easy button on the page
-    const easyButton = document.querySelector('.level-easy');
+    // Find all buttons with the class 'level-card'
+    const levelButtons = document.querySelectorAll('.level-card');
 
-    // Make sure the button actually exists on this page before adding the click action
-    if (easyButton) {
-        easyButton.addEventListener('click', () => {
-            // Send the user to the easy page
-            window.location.href = 'easy.html';
+    // Loop through each button and add a click event
+    levelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            
+            // Get the difficulty level from the data-level attribute in your HTML
+            const level = button.getAttribute('data-level'); 
+            
+            // Direct the user into the Difficulties folder to the correct page
+            if (level) {
+                window.location.href = `Difficulties/${level}.html`;
+            }
         });
-    }
+    });
 
 });
