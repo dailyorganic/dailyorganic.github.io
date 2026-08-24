@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>About Page</h1>
-  <p>Welcome to the about page!</p>
 
-  <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Easy Difficulty - The Daily Organic</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <!-- Navigation back to home -->
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <!-- The Title Box (Reusing your Easy colors) -->
+        <header class="quiz-header level-easy">
+            <h1>Easy Difficulty</h1>
+            <span class="stars" aria-label="Difficulty 1 of 3">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </span>
+        </header>
+
+        <!-- The Molecule Rendering Area -->
+        <section class="molecule-display">
+            <!-- You will insert your molecule image or canvas here later -->
+            <p class="placeholder-text">[ Molecule renders here ]</p>
+        </section>
+
+        <!-- The Answer Input Box -->
+        <section class="answer-section">
+            <input type="text" class="answer-input" placeholder="Type your IUPAC name here..." aria-label="Molecule Name">
+        </section>
+
+    </main>
+
 </body>
+
 </html>

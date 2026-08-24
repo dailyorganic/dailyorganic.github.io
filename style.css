@@ -227,3 +227,97 @@ body {
         margin-right: 4%;
     }
 }
+
+/* NOW THIS IS EASY NOT THE HOMEPAGE ANYMORE READ PLEASE LINE 231 */
+
+/* =========================================
+   QUIZ PAGE STYLES (Easy, Medium, Hard)
+   ========================================= */
+
+/* Back Button */
+.back-link {
+    align-self: flex-start;
+    text-decoration: none;
+    color: #4a5a68;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1c2a35;
+    text-decoration: underline;
+}
+
+/* Quiz Header */
+.quiz-header {
+    width: 100%;
+    padding: 24px 32px;
+    border-radius: 16px;
+    border-width: 1px;
+    border-style: solid;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+}
+
+/* White Box for Molecule */
+.molecule-display {
+    width: 100%;
+    min-height: 350px; /* Big empty space */
+    background-color: #ffffff;
+    border: 2px dashed #b8ccd8; /* Dashed border until you add the image */
+    border-radius: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 8px 24px -12px rgba(29, 41, 33, 0.15);
+}
+
+.placeholder-text {
+    color: #8a978c;
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+}
+
+/* Text Input Field */
+.answer-section {
+    width: 100%;
+}
+
+.answer-input {
+    width: 100%;
+    padding: 20px 24px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    
+    background-color: #ffffff;
+    border: 2px solid #b8ccd8;
+    border-radius: 16px;
+    outline: none;
+    
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* When the user clicks into the text box */
+.answer-input:focus {
+    border-color: #6a9a5f; /* Matches your easy level green */
+    box-shadow: 0 0 0 4px rgba(168, 201, 155, 0.3);
+}
+
+.answer-input::placeholder {
+    color: #8a978c;
+}
