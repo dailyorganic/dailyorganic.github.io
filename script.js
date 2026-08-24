@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // -----------------------------
-    // Difficulty selection
+    // Difficulty selection (Homepage)
     // -----------------------------
     const levelButtons = document.querySelectorAll('.level-card');
 
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -----------------------------
-    // Answer checking
+    // Answer checking (Quiz Pages)
     // -----------------------------
     const difficulty = document.body.dataset.difficulty;
 
     if (difficulty) {
-        let resultTimeout = null; // Stores the active timer ID
+        let resultTimeout = null; // Stores timer to auto-hide incorrect alerts
 
         fetch("../answers.json")
             .then(response => response.json())
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userAnswer = answerInput.value.trim().toLowerCase();
                     if (!userAnswer) return;
 
-                    // Clear any running timer if the user submits again quickly
+                    // Clear any active fade-out timer if the user submits again quickly
                     if (resultTimeout) {
                         clearTimeout(resultTimeout);
                     }
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         result.textContent = "❌ Incorrect answer. Try again!";
                         result.className = "show incorrect";
 
-                        // Hide the message after 3 seconds
+                        // Hide the incorrect message after 3 seconds
                         resultTimeout = setTimeout(() => {
                             result.classList.remove("show");
                         }, 3000);
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 submitAnswer.addEventListener("click", checkAnswer);
 
+                // Allow submitting with the 'Enter' key
                 answerInput.addEventListener("keypress", (e) => {
                     if (e.key === "Enter") {
                         checkAnswer();
@@ -71,8 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Error loading answers.json:", error);
             });
     }
+});
 
-// Automatically loads confetti script from CDN on demand
+// -----------------------------
+// Dynamic Confetti Animation
+// -----------------------------
 function launchConfetti() {
     if (window.confetti) {
         window.confetti({
