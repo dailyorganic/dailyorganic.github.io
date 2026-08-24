@@ -328,3 +328,90 @@ body {
 .answer-input::placeholder {
     color: #8a978c;
 }
+
+/* ---------- Answer Form & Submit Button ---------- */
+.answer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Wrapper to keep input and submit button side-by-side on desktop */
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+.answer-input {
+    flex: 1;
+}
+
+#submitAnswer {
+    padding: 18px 28px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#submitAnswer:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px -6px rgba(37, 99, 235, 0.4);
+}
+
+#submitAnswer:active {
+    transform: translateY(0);
+}
+
+/* ---------- Result Feedback Badges ---------- */
+#result {
+    margin: 4px 0 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#result.correct {
+    color: #15803d;
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+#result.incorrect {
+    color: #b91c1c;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+/* Mobile Responsiveness for Form */
+@media (max-width: 600px) {
+    .input-wrapper {
+        flex-direction: column;
+    }
+    
+    #submitAnswer {
+        width: 100%;
+        padding: 16px;
+    }
+}
