@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const difficulty = document.body.dataset.difficulty;
 
     if (difficulty) {
+        let resultTimeout = null; // Stores the active timer ID
+
         fetch("../answers.json")
             .then(response => response.json())
             .then(data => {
@@ -32,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userAnswer = answerInput.value.trim().toLowerCase();
                     if (!userAnswer) return;
 
+                    // Clear any running timer if the user submits again quickly
+                    if (resultTimeout) {
+                        clearTimeout(resultTimeout);
+                    }
+
                     const correct = answers.some(answer =>
                         answer.toLowerCase() === userAnswer
                     );
@@ -43,12 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         result.textContent = "❌ Incorrect answer. Try again!";
                         result.className = "show incorrect";
+
+                        // Hide the message after 3 seconds
+                        resultTimeout = setTimeout(() => {
+                            result.classList.remove("show");
+                        }, 3000);
                     }
                 };
 
                 submitAnswer.addEventListener("click", checkAnswer);
 
-                // Allow pressing 'Enter' inside the text box to submit
                 answerInput.addEventListener("keypress", (e) => {
                     if (e.key === "Enter") {
                         checkAnswer();
@@ -60,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Error loading answers.json:", error);
             });
     }
-});
 
 // Automatically loads confetti script from CDN on demand
 function launchConfetti() {
