@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = document.getElementById("result");
 
                 const checkAnswer = () => {
+                    // Do nothing if the quiz is already completed
+                    if (answerInput.disabled) return;
+
                     const userAnswer = answerInput.value.trim().toLowerCase();
                     if (!userAnswer) return;
 
@@ -47,6 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         result.textContent = "✨ Correct answer! Great job!";
                         result.className = "show correct";
                         launchConfetti();
+
+                        // Lock the input field and submit button
+                        answerInput.disabled = true;
+                        submitAnswer.disabled = true;
                     } else {
                         result.textContent = "❌ Incorrect answer. Try again!";
                         result.className = "show incorrect";

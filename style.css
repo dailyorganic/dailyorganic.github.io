@@ -415,3 +415,9 @@ body {
         padding: 16px;
     }
 }
+
+.answer-input:disabled, 
+#submitAnswer:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
