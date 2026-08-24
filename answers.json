@@ -1,0 +1,14 @@
+{
+    "easy": [
+        "ethanoic acid"
+    ],
+
+    "medium": [
+        "2-methylpropyl 3-methylbutanoate"
+    ],
+
+    "hard": [
+        "N-(4-hydroxyphenyl)acetamide",
+        "N-(4-hydroxyphenyl)ethanamide(paracetamol)"
+    ]
+}

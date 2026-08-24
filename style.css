@@ -286,6 +286,13 @@ body {
     box-shadow: 0 8px 24px -12px rgba(29, 41, 33, 0.15);
 }
 
+/* Molecule image */
+.molecule-image {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
+
 .placeholder-text {
     color: #8a978c;
     font-family: 'DM Sans', sans-serif;

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Medium Difficulty - The Daily Organic</title>
 </head>
-<body>
+
+<body data-difficulty="medium">
     <main class="container">
         <!-- Navigation back to home -->
         <a href="../index.html" class="back-link">&larr; Back to Home</a>
@@ -23,13 +25,19 @@
 
         <!-- The Molecule Rendering Area -->
         <section class="molecule-display">
-            <p class="placeholder-text">[ Molecule renders here ]</p>
+            <img src="../images/medium.png" alt="Medium" class="molecule-image">
         </section>
 
         <!-- The Answer Input Box -->
         <section class="answer-section">
-            <input type="text" class="answer-input" placeholder="Type your IUPAC name here..." aria-label="Molecule Name">
+            <input type="text" id="answerInput" class="answer-input" placeholder="Type your IUPAC name here..." aria-label="Molecule Name">
+            <button id="submitAnswer">Submit</button>
+            <p id="result"></p>
         </section>
+        
     </main>
+
+    <script src="../script.js"></script>
 </body>
+
 </html>

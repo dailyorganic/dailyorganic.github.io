@@ -8,7 +8,7 @@
     <title>Easy Difficulty - The Daily Organic</title>
 </head>
 
-<body>
+<body data-difficulty="easy">
 
     <main class="container">
         <!-- Navigation back to home -->
@@ -27,16 +27,19 @@
         <!-- The Molecule Rendering Area -->
         <section class="molecule-display">
             <!-- You will insert your molecule image or canvas here later -->
-            <p class="placeholder-text">[ Molecule renders here ]</p>
+            <img src="../images/easy.png" alt="Easy" class="molecule-image">
         </section>
 
         <!-- The Answer Input Box -->
         <section class="answer-section">
-            <input type="text" class="answer-input" placeholder="Type your IUPAC name here..." aria-label="Molecule Name">
+            <input type="text" id="answerInput" class="answer-input" placeholder="Type your IUPAC name here..." aria-label="Molecule Name">
+            <button id="submitAnswer">Submit</button>
+            <p id="result"></p>
         </section>
 
     </main>
-
+    
+    <script src="../script.js"></script>
 </body>
 
 </html>

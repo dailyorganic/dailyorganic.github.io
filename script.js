@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // -----------------------------
+    // Difficulty selection
+    // -----------------------------
+
+
     // Find all buttons with the class 'level-card'
     const levelButtons = document.querySelectorAll('.level-card');
 
@@ -16,5 +21,54 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    
+    // -----------------------------
+    // Answer checking
+    // -----------------------------
+
+
+const difficulty = document.body.dataset.difficulty;
+
+    // Only run the quiz code if we're on a difficulty page
+if (difficulty) {
+
+    fetch("../answers.json")
+        .then(response => response.json())
+        .then(data => {
+
+            const answers = data[difficulty];
+
+            const answerInput = document.getElementById("answerInput");
+                const submitAnswer = document.getElementById("submitAnswer");
+
+                const result = document.getElementById("result");
+
+                submitAnswer.addEventListener("click", () => {
+
+                    const userAnswer = answerInput.value
+                        .trim()
+                        .toLowerCase();
+
+                    const correct = answers.some(answer =>
+                        answer.toLowerCase() === userAnswer
+                    );
+
+                    if (correct) {
+                    result.textContent = "Correct answer!";
+                    result.style.color = "green";
+                } else {
+                    result.textContent = "Incorrect answer!";
+                    result.style.color = "red";
+                }
+
+            });
+
+            })
+        .catch(error => {
+        console.error("Error loading answers.json:", error);
+         });
+
+}
 
 });
