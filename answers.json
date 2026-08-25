@@ -1,6 +1,7 @@
 {
     "easy": [
         "ethanoic acid"
+        "acetic acid"
     ],
 
     "medium": [
@@ -9,6 +10,6 @@
 
     "hard": [
         "N-(4-hydroxyphenyl)acetamide",
-        "N-(4-hydroxyphenyl)ethanamide(paracetamol)"
+        "N-(4-hydroxyphenyl)ethanamide"
     ]
 }
