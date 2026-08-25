@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Statistics - The Daily Organic</title>
+</head>
+
+<body data-page="statistics">
+    <main class="container">
+        <!-- Navigation back to home -->
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <!-- Header -->
+        <header class="hero-card">
+            <p class="eyebrow">Your Performance</p>
+            <h1 class="title">Statistics</h1>
+            <p class="subtitle">Track your daily chemistry puzzle activity.</p>
+        </header>
+
+        <!-- Main Stats Grid -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number" id="statTotal">0</span>
+                <span class="stat-label">Total Attempts</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="statSuccess">0</span>
+                <span class="stat-label">Successful</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="statUnsuccess">0</span>
+                <span class="stat-label">Unsuccessful</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="statMedian">0</span>
+                <span class="stat-label">Median Attempts</span>
+            </div>
+        </section>
+
+        <!-- Level Click Activity -->
+        <section class="activity-section">
+            <h2 class="activity-title">Level Activity (Opened)</h2>
+            <div class="clicks-grid">
+                <div class="click-card level-easy">
+                    <span class="click-count" id="clickEasy">0</span>
+                    <span class="click-label">Easy</span>
+                </div>
+                <div class="click-card level-medium">
+                    <span class="click-count" id="clickMedium">0</span>
+                    <span class="click-label">Medium</span>
+                </div>
+                <div class="click-card level-hard">
+                    <span class="click-count" id="clickHard">0</span>
+                    <span class="click-label">Hard</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
